@@ -5,7 +5,8 @@
         <div class="d-flex justify-content-center w-100 p-4">Testons Symphonie Musicale</div>
         <div class="container-fluid d-flex w-100 flex-wrap justify-content-around align-items-start">
             {% for project in projects %}
-                <div class="card" style="width: 18rem;">
+                <div class="card align-items-end" style="width: 18rem;">
+                    <a href="{{ absolute_url(asset('')) }}app_dev.php/add/remove/{{ project.id }}" class="fas fa-trash"></a>
                     <img class="card-img-top" src="{{ project.image }}" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">{{ project.name }}</h5>

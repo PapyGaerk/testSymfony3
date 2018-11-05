@@ -1,28 +1,40 @@
 <?php
+
 namespace AppBundle\Entity;
 
 class Add
 {
-    protected $task;
-    protected $dueDate;
+    protected $name;
+    protected $description;
+    protected $image;
 
-    public function getTask()
+    public function getName()
     {
-        return $this->task;
+        return $this->name;
     }
 
-    public function setTask($task)
+    public function setName($name)
     {
-        $this->task = $task;
+        $this->name = $name;
     }
 
-    public function getDueDate()
+    public function getDescription()
     {
-        return $this->dueDate;
+        return $this->description;
     }
 
-    public function setDueDate(\DateTime $dueDate = null)
+    public function setDescription($description)
     {
-        $this->dueDate = $dueDate;
+        $this->description = $description;
+    }
+
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    public function setImage($image)
+    {
+        $this->image = $image;
     }
 }
