@@ -1,0 +1,7 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+project_add:
+    path: /add
+    defaults: {_controller: AppBundle:Add:new }

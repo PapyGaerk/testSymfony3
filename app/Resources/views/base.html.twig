@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('js/bootstrap.min.js') }}">
+</head>
+<body>
+<ul class="nav justify-content-end bg-dark navbar-dark">
+    <li class="nav-item">
+        <a class="nav-link active" href="/">Home</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" href="/add">Add</a>
+    </li>
+</ul>
+{% block body %}{% endblock %}
+</body>
+</html>

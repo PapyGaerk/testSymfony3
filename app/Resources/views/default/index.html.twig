@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container-fluid d-flex flex-wrap">
+        <div class="d-flex justify-content-center w-100 p-4">Testons Symphonie Musicale</div>
+        <div class="container-fluid d-flex w-100 flex-wrap justify-content-around align-items-start">
+            {% for project in projects %}
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{ project.image }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ project.name }}</h5>
+                        <p class="card-text">{{ project.description }}</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
