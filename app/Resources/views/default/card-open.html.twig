@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container-fluid d-flex flex-wrap justify-content-center">
+        <div class="d-flex justify-content-center w-100 p-4">{{ project.name }}</div>
+        <img src="{{ asset('img/') ~ project.image }}" alt="Card image cap">
+        <div class="desc justify-content-center w-100 p-4 text-center">{{ project.description }}</div>
+    </div>
+{% endblock %}

@@ -3,9 +3,29 @@ homepage:
   defaults: { _controller: AppBundle:Default:index }
 
 project_add:
-    path: /add
+    path: /project/add/
     defaults: {_controller: AppBundle:ManageProjects:addProject }
 
 project_remove:
-    path: /add/remove/{idProject}
+    path: /project/remove/{idProject}
     defaults: {_controller: AppBundle:ManageProjects:removeProject }
+
+project_update:
+    path: /project/update/{idProject}
+    defaults: {_controller: AppBundle:ManageProjects:updateProject }
+
+project_filter_categorie:
+    path: /project/filter/{categorieSlug}
+    defaults: {_controller: AppBundle:ManageProjects:filterByCategorie }
+
+project_open:
+    path: /project/open/{idProject}
+    defaults: {_controller: AppBundle:ManageProjects:openProject }
+
+contact:
+    path: /contact/
+    defaults: {_controller: AppBundle:Contact:formContact }
+
+connexion:
+    path: /connexion/
+    defaults: {_controller: AppBundle:ManageUsers:suscribe }

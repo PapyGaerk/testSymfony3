@@ -2,16 +2,27 @@
 
 {% block body %}
     <div class="container-fluid d-flex flex-wrap">
-        <div class="d-flex justify-content-center w-100 p-4">Testons Symphonie Musicale</div>
+        <h1 class="d-flex justify-content-center w-100 p-4">La vie est belle sous les cocotiers</h1>
         <div class="container-fluid d-flex w-100 flex-wrap justify-content-around align-items-start">
+            <ul class="list-inline w-100 text-center">
+                <li id="all" class="list-inline-item">
+                    <a href="{{ path('homepage') }}">All</a>
+                </li>
+                {% for categorie in categories %}
+                    <li id="{{ categorie.slug }}" class="list-inline-item">
+                        <a href="{{ path('project_filter_categorie', {categorieSlug: categorie.slug}) }}">{{ categorie.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
             {% for project in projects %}
                 <div class="card align-items-end" style="width: 18rem;">
-                    <a href="{{ absolute_url(asset('')) }}app_dev.php/add/remove/{{ project.id }}" class="fas fa-trash"></a>
-                    <img class="card-img-top" src="{{ project.image }}" alt="Card image cap">
-                    <div class="card-body">
+                    <a href="{{ path('project_remove', {idProject: project.id}) }}" class="fas fa-trash"></a>
+                    <a href="{{ path('project_update', {idProject: project.id}) }}" class="fas fa-gears"></a>
+                    <img class="card-img-top" src="{{ asset('img/') ~ project.image }}" alt="Card image cap">
+                    <div class="card-body w-100 ">
                         <h5 class="card-title">{{ project.name }}</h5>
                         <p class="card-text">{{ project.description }}</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="{{ path('project_open', {idProject: project.id}) }}" class="btn btn-primary">Don't Dead, Open Inside</a>
                     </div>
                 </div>
             {% endfor %}

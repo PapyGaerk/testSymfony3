@@ -29,6 +29,11 @@ services:
         public: true
         tags: ['controller.service_arguments']
 
+    mailjet_mailer:
+             class: AppBundle\Service\MailjetMailer
+             public: true
+             arguments: ["%mailer_user%", "%mailer_password%", "@service_container"]
+
     # add more services, or override services that need manual wiring
     # AppBundle\Service\ExampleService:
     #     arguments:
