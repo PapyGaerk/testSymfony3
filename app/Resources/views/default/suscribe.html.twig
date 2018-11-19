@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container-fluid d-flex flex-wrap  justify-content-center">
+        <h1 class="w-100 p-4 text-center">Yo, connecte toi Negro</h1>
+        <div class="container w-25">
+            {{ form_start(form) }}
+            <div class="form-group">
+                {{ form_label(form.username) }}
+                {{ form_widget(form.username, {attr: {class: 'form-control'} }) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(form.password) }}
+                {{ form_widget(form.password, {attr: {class: 'form-control'} }) }}
+            </div>
+            {{ form_widget(form.save, {attr: {class: 'btn btn-primary'} }) }}
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

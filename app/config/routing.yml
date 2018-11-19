@@ -26,6 +26,13 @@ contact:
     path: /contact/
     defaults: {_controller: AppBundle:Contact:formContact }
 
-connexion:
-    path: /connexion/
+suscribe:
+    path: /suscribe
     defaults: {_controller: AppBundle:ManageUsers:suscribe }
+
+login:
+    path: /login
+    defaults: {_controller: AppBundle:ManageUsers:connection }
+
+app_logout:
+    path: /logout

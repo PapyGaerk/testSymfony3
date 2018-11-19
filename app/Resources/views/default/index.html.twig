@@ -16,8 +16,10 @@
             </ul>
             {% for project in projects %}
                 <div class="card align-items-end" style="width: 18rem;">
-                    <a href="{{ path('project_remove', {idProject: project.id}) }}" class="fas fa-trash"></a>
-                    <a href="{{ path('project_update', {idProject: project.id}) }}" class="fas fa-gears"></a>
+                    {% if app.user %}
+                        <a href="{{ path('project_remove', {idProject: project.id}) }}" class="fas fa-trash"></a>
+                        <a href="{{ path('project_update', {idProject: project.id}) }}" class="fas fa-gears"></a>
+                    {% endif %}
                     <img class="card-img-top" src="{{ asset('img/') ~ project.image }}" alt="Card image cap">
                     <div class="card-body w-100 ">
                         <h5 class="card-title">{{ project.name }}</h5>
